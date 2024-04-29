@@ -1,9 +1,5 @@
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 import java.util.Map.Entry;
-import java.util.Optional;
-import java.util.OptionalDouble;
-import java.util.TreeMap;
 
 public class HashMapDemo {
 
@@ -31,17 +27,36 @@ public class HashMapDemo {
 
         Optional<Entry<String, Integer>> highestStockEntry = stockPrice.entrySet().stream().sorted(Entry.comparingByValue()).reduce((r1, r2) -> r2);
 
-        System.out.println(highestStockEntry.get().getValue());
+//        System.out.println(highestStockEntry.get().getValue());
 
         // Problem 2: Find the average stock price Find the average stock price of all the companies
         OptionalDouble avg = stockPrice.values().stream().mapToDouble(Integer::doubleValue).average();
 
-        System.out.println(avg.getAsDouble());
+//        System.out.println(avg.getAsDouble());
 
         // Problem 3: Remove companies with stock price below 50
         stockPrice.entrySet().removeIf(stringIntegerEntry -> stringIntegerEntry.getValue() < 50);
 
-        System.out.println(stockPrice);
+//        System.out.println(stockPrice);
+
+        List<Integer> list = new LinkedList<>();
+
+        list.add(20);
+        list.add(30);
+        list.add(40);
+        list.add(50);
+        list.add(60);
+        list.add(70);
+        list.add(80);
+
+
+        ListIterator iterator = list.listIterator();
+
+        System.out.println(iterator.next());
+        System.out.println(iterator.next());
+        System.out.println(iterator.previous());
+
+
 
 
     }

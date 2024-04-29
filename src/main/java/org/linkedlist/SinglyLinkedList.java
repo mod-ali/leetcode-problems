@@ -2,7 +2,6 @@ package org.linkedlist;
 
 public class SinglyLinkedList<T> {
 
-    //Node inner class for SLL
     public class Node {
 
         public T data;
@@ -21,10 +20,7 @@ public class SinglyLinkedList<T> {
 
     //Helper Function that checks if List is empty or not
     public boolean isEmpty() {
-        if (headNode == null) {
-            return true;
-        }
-        return false;
+        return headNode == null;
     }
 
     //Inserts new data at the start of the linked list
@@ -64,7 +60,6 @@ public class SinglyLinkedList<T> {
         //Creating a new Node with value data
         Node newNode = new Node();
         newNode.data = data;
-        newNode.nextNode = null;
 
         Node last = headNode;
         //iterate to the last element
@@ -73,6 +68,7 @@ public class SinglyLinkedList<T> {
         }
         //make newNode the next element of the last node
         last.nextNode = newNode;
+        newNode.nextNode = null;
         size++;
     }
 

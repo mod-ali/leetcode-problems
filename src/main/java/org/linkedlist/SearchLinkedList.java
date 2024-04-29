@@ -11,8 +11,7 @@
      public class Node {
 
          public T data;
-         public
-         Node nextNode;
+         public Node nextNode;
 
      }
 
